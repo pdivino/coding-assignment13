@@ -2,7 +2,13 @@
 FROM node:24-alpine AS build
 
 # Creates and selects the required working directory inside Docker.
-WORKDIR /divino_paolo_ui_garden
+WORKDIR /divino_paolo_ui_garden_build_checks
+
+# Turns off Husky because Git hooks are not needed inside the container.
+ENV HUSKY=0
+
+# Installs the same npm version used locally and in GitHub Actions.
+RUN npm install -g npm@11.16.0
 
 # Copies the package files first so Docker can install dependencies.
 COPY package.json package-lock.json ./
@@ -21,16 +27,16 @@ RUN npm run build
 FROM nginx:1.27-alpine
 
 # Uses the required directory for the hosted site files.
-WORKDIR /divino_paolo_ui_garden
+WORKDIR /divino_paolo_ui_garden_build_checks
 
 # Copies the React build from Stage 1 into the hosting directory.
-COPY --from=build /divino_paolo_ui_garden/build .
+COPY --from=build /divino_paolo_ui_garden_build_checks/build .
 
 # Copies our Nginx settings into the server.
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Documents that the web server listens on port 8083.
-EXPOSE 8083
+# Documents that the web server listens on port 8018.
+EXPOSE 8018
 
 # Starts Nginx and keeps it running as the main container process.
 CMD ["nginx", "-g", "daemon off;"]
