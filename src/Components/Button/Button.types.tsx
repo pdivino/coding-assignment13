@@ -3,8 +3,7 @@
 import type { ButtonHTMLAttributes } from 'react';
 
 // Defines the properties that our Button component can receive.
-export interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   // Text displayed inside the button.
   label?: string;
 

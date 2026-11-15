@@ -21,14 +21,11 @@ const StyledTable = styled.table<{
   background-color: ${({ $disabled, $backgroundColor }) =>
     $disabled ? '#d1d5db' : $backgroundColor};
 
-  color: ${({ $disabled }) =>
-    $disabled ? '#6b7280' : '#111827'};
+  color: ${({ $disabled }) => ($disabled ? '#6b7280' : '#111827')};
 
-  opacity: ${({ $disabled }) =>
-    $disabled ? 0.7 : 1};
+  opacity: ${({ $disabled }) => ($disabled ? 0.7 : 1)};
 
-  cursor: ${({ $disabled }) =>
-    $disabled ? 'not-allowed' : 'default'};
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'default')};
 `;
 
 // Gives the header and footer a distinct appearance.
@@ -80,9 +77,7 @@ export function Table({
         <thead>
           <tr>
             {headers.map((header) => (
-              <HeaderCell key={header}>
-                {header}
-              </HeaderCell>
+              <HeaderCell key={header}>{header}</HeaderCell>
             ))}
           </tr>
         </thead>
@@ -91,9 +86,7 @@ export function Table({
           {rows.map((row, rowIndex) => (
             <tr key={rowIndex}>
               {row.map((cell, cellIndex) => (
-                <DataCell key={cellIndex}>
-                  {cell}
-                </DataCell>
+                <DataCell key={cellIndex}>{cell}</DataCell>
               ))}
             </tr>
           ))}
@@ -101,9 +94,7 @@ export function Table({
 
         <tfoot>
           <tr>
-            <FooterCell colSpan={headers.length || 1}>
-              {footerText}
-            </FooterCell>
+            <FooterCell colSpan={headers.length || 1}>{footerText}</FooterCell>
           </tr>
         </tfoot>
       </StyledTable>

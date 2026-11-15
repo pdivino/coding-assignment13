@@ -17,19 +17,14 @@ const CardContainer = styled.div<{
   background-color: ${({ $disabled, $backgroundColor }) =>
     $disabled ? '#d1d5db' : $backgroundColor};
 
-  color: ${({ $disabled }) =>
-    $disabled ? '#6b7280' : '#111827'};
+  color: ${({ $disabled }) => ($disabled ? '#6b7280' : '#111827')};
 
-  opacity: ${({ $disabled }) =>
-    $disabled ? 0.7 : 1};
+  opacity: ${({ $disabled }) => ($disabled ? 0.7 : 1)};
 
-  cursor: ${({ $disabled }) =>
-    $disabled ? 'not-allowed' : 'default'};
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'default')};
 
   box-shadow: ${({ $disabled }) =>
-    $disabled
-      ? 'none'
-      : '0 4px 12px rgba(0, 0, 0, 0.12)'};
+    $disabled ? 'none' : '0 4px 12px rgba(0, 0, 0, 0.12)'};
 
   // Allows the Card to fill the available width on small screens.
   @media (max-width: 480px) {
@@ -70,8 +65,7 @@ const CardDescription = styled.p`
 export function Card({
   title = 'Card title',
   description = 'This is a reusable Card component.',
-  imageUrl =
-    '/ui-garden.svg',
+  imageUrl = '/ui-garden.svg',
   backgroundColor = '#ffffff',
   disabled = false,
   ...rest
@@ -84,16 +78,11 @@ export function Card({
       data-testid="card"
       {...rest}
     >
-      <CardImage
-        src={imageUrl}
-        alt=""
-      />
+      <CardImage src={imageUrl} alt="" />
 
       <CardContent>
         <CardTitle>{title}</CardTitle>
-        <CardDescription>
-          {description}
-        </CardDescription>
+        <CardDescription>{description}</CardDescription>
       </CardContent>
     </CardContainer>
   );

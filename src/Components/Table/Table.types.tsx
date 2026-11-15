@@ -2,8 +2,7 @@
 import type { TableHTMLAttributes } from 'react';
 
 // Defines the properties that our Table component can receive.
-export interface TableProps
-  extends TableHTMLAttributes<HTMLTableElement> {
+export interface TableProps extends TableHTMLAttributes<HTMLTableElement> {
   // Headings displayed across the top of the Table.
   headers?: string[];
 

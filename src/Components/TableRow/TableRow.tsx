@@ -9,11 +9,9 @@ const StyledTableRow = styled.tr<{
   background-color: ${({ $disabled, $backgroundColor }) =>
     $disabled ? '#d1d5db' : $backgroundColor};
 
-  color: ${({ $disabled }) =>
-    $disabled ? '#6b7280' : '#111827'};
+  color: ${({ $disabled }) => ($disabled ? '#6b7280' : '#111827')};
 
-  cursor: ${({ $disabled }) =>
-    $disabled ? 'not-allowed' : 'default'};
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'default')};
 `;
 
 // Styles each cell created inside the row.
@@ -38,9 +36,7 @@ export function TableRow({
       {...rest}
     >
       {cells.map((cell, index) => (
-        <RowCell key={index}>
-          {cell}
-        </RowCell>
+        <RowCell key={index}>{cell}</RowCell>
       ))}
     </StyledTableRow>
   );

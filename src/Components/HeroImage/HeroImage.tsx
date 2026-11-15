@@ -19,8 +19,7 @@ const HeroSection = styled.section<{
   align-items: center;
 
   text-align: center;
-  color: ${({ $disabled }) =>
-    $disabled ? '#6b7280' : '#ffffff'};
+  color: ${({ $disabled }) => ($disabled ? '#6b7280' : '#ffffff')};
 
   // Uses grey when disabled or the selected colour when enabled.
   background-color: ${({ $disabled, $backgroundColor }) =>
@@ -38,8 +37,7 @@ const HeroSection = styled.section<{
   background-size: cover;
   background-position: center;
 
-  cursor: ${({ $disabled }) =>
-    $disabled ? 'not-allowed' : 'default'};
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'default')};
 
   // Reduces the banner size and spacing on small screens.
   @media (max-width: 480px) {
@@ -66,8 +64,7 @@ const HeroSubtitle = styled.p`
 export function HeroImage({
   title = 'Welcome to UI Garden',
   subtitle = 'Reusable components built with React and Storybook.',
-  imageUrl =
-    '/ui-garden.svg',
+  imageUrl = '/ui-garden.svg',
   backgroundColor = '#2563eb',
   disabled = false,
   ...rest

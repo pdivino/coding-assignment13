@@ -9,11 +9,9 @@ const StyledTableHeader = styled.thead<{
   background-color: ${({ $disabled, $backgroundColor }) =>
     $disabled ? '#d1d5db' : $backgroundColor};
 
-  color: ${({ $disabled }) =>
-    $disabled ? '#6b7280' : '#111827'};
+  color: ${({ $disabled }) => ($disabled ? '#6b7280' : '#111827')};
 
-  cursor: ${({ $disabled }) =>
-    $disabled ? 'not-allowed' : 'default'};
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'default')};
 `;
 
 // Styles each heading cell.
@@ -40,9 +38,7 @@ export function TableHeader({
     >
       <tr>
         {headings.map((heading) => (
-          <HeadingCell key={heading}>
-            {heading}
-          </HeadingCell>
+          <HeadingCell key={heading}>{heading}</HeadingCell>
         ))}
       </tr>
     </StyledTableHeader>

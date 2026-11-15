@@ -2,8 +2,7 @@
 import type { InputHTMLAttributes } from 'react';
 
 // Defines the properties that our RadioButton component can receive.
-export interface RadioButtonProps
-  extends InputHTMLAttributes<HTMLInputElement> {
+export interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
   // Text displayed beside the radio button.
   label?: string;
 

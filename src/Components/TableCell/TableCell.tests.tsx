@@ -12,7 +12,7 @@ describe('TableCell component', () => {
             <TableCell content="Visible cell" />
           </tr>
         </tbody>
-      </table>
+      </table>,
     );
 
     const cell = screen.getByRole('cell', {
@@ -31,14 +31,11 @@ describe('TableCell component', () => {
             <TableCell disabled />
           </tr>
         </tbody>
-      </table>
+      </table>,
     );
 
     const cell = screen.getByTestId('table-cell');
 
-    expect(cell).toHaveStyleRule(
-      'background-color',
-      '#d1d5db'
-    );
+    expect(cell).toHaveStyleRule('background-color', '#d1d5db');
   });
 });

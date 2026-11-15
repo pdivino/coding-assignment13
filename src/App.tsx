@@ -45,10 +45,7 @@ function App() {
 
             {/* htmlFor could connect this Label to an input with
                 the id "email-example". */}
-            <Label
-              text="Email address"
-              htmlFor="email-example"
-            />
+            <Label text="Email address" htmlFor="email-example" />
           </article>
 
           <article className="component-example">
@@ -73,20 +70,14 @@ function App() {
             <h3>Radio Button</h3>
 
             {/* name identifies the radio button group. */}
-            <RadioButton
-              label="Select this option"
-              name="gallery-example"
-            />
+            <RadioButton label="Select this option" name="gallery-example" />
           </article>
 
           <article className="component-example">
             <h3>Img</h3>
 
             {/* alt provides an accessible image description. */}
-            <Img
-              src="/ui-garden.svg"
-              alt="Responsive placeholder"
-            />
+            <Img src="/ui-garden.svg" alt="Responsive placeholder" />
           </article>
 
           <article className="component-example">
@@ -125,19 +116,12 @@ function App() {
         <div className="table-container">
           <table className="component-table">
             {/* TableHeader creates the <thead> section. */}
-            <TableHeader
-              headings={['Part', 'Description']}
-            />
+            <TableHeader headings={['Part', 'Description']} />
 
             {/* HTML requires normal table rows to be inside <tbody>. */}
             <tbody>
               {/* TableRow creates an entire row from an array. */}
-              <TableRow
-                cells={[
-                  'TableRow',
-                  'Displays a complete row',
-                ]}
-              />
+              <TableRow cells={['TableRow', 'Displays a complete row']} />
 
               {/* TableCell creates one cell at a time. */}
               <tr>
@@ -148,10 +132,7 @@ function App() {
 
             {/* TableFooter creates the <tfoot> section.
                 columnSpan makes it cover both columns. */}
-            <TableFooter
-              content="Table component examples"
-              columnSpan={2}
-            />
+            <TableFooter content="Table component examples" columnSpan={2} />
           </table>
         </div>
       </section>

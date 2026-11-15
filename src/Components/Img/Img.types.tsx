@@ -2,8 +2,7 @@
 import type { ImgHTMLAttributes } from 'react';
 
 // Defines the properties that our Img component can receive.
-export interface ImgProps
-  extends ImgHTMLAttributes<HTMLImageElement> {
+export interface ImgProps extends ImgHTMLAttributes<HTMLImageElement> {
   // Location of the image file.
   src?: string;
 

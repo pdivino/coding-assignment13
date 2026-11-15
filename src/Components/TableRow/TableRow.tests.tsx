@@ -10,7 +10,7 @@ describe('TableRow component', () => {
         <tbody>
           <TableRow cells={['Visible row']} />
         </tbody>
-      </table>
+      </table>,
     );
 
     const cell = screen.getByRole('cell', {
@@ -27,14 +27,11 @@ describe('TableRow component', () => {
         <tbody>
           <TableRow disabled />
         </tbody>
-      </table>
+      </table>,
     );
 
     const row = screen.getByTestId('table-row');
 
-    expect(row).toHaveStyleRule(
-      'background-color',
-      '#d1d5db'
-    );
+    expect(row).toHaveStyleRule('background-color', '#d1d5db');
   });
 });

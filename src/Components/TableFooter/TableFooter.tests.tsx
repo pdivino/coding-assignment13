@@ -8,7 +8,7 @@ describe('TableFooter component', () => {
     render(
       <table>
         <TableFooter content="Visible footer" />
-      </table>
+      </table>,
     );
 
     const footerCell = screen.getByRole('cell', {
@@ -23,14 +23,11 @@ describe('TableFooter component', () => {
     render(
       <table>
         <TableFooter disabled />
-      </table>
+      </table>,
     );
 
     const footer = screen.getByTestId('table-footer');
 
-    expect(footer).toHaveStyleRule(
-      'background-color',
-      '#d1d5db'
-    );
+    expect(footer).toHaveStyleRule('background-color', '#d1d5db');
   });
 });

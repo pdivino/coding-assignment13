@@ -14,18 +14,10 @@ describe('RadioButton component', () => {
 
   // Required test 2: confirms that the disabled background is grey.
   test('changes background colour when disabled', () => {
-    render(
-      <RadioButton
-        label="Disabled option"
-        disabled
-      />
-    );
+    render(<RadioButton label="Disabled option" disabled />);
 
     const container = screen.getByTestId('radio-container');
 
-    expect(container).toHaveStyleRule(
-      'background-color',
-      '#d1d5db'
-    );
+    expect(container).toHaveStyleRule('background-color', '#d1d5db');
   });
 });

@@ -2,8 +2,7 @@
 import type { TdHTMLAttributes } from 'react';
 
 // Defines the properties that our TableCell can receive.
-export interface TableCellProps
-  extends TdHTMLAttributes<HTMLTableCellElement> {
+export interface TableCellProps extends TdHTMLAttributes<HTMLTableCellElement> {
   // Text displayed inside the cell.
   content?: string;
 

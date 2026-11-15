@@ -9,11 +9,9 @@ const StyledTableFooter = styled.tfoot<{
   background-color: ${({ $disabled, $backgroundColor }) =>
     $disabled ? '#d1d5db' : $backgroundColor};
 
-  color: ${({ $disabled }) =>
-    $disabled ? '#6b7280' : '#111827'};
+  color: ${({ $disabled }) => ($disabled ? '#6b7280' : '#111827')};
 
-  cursor: ${({ $disabled }) =>
-    $disabled ? 'not-allowed' : 'default'};
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'default')};
 `;
 
 // Styles the cell inside the footer.
@@ -41,9 +39,7 @@ export function TableFooter({
       {...rest}
     >
       <tr>
-        <FooterCell colSpan={columnSpan}>
-          {content}
-        </FooterCell>
+        <FooterCell colSpan={columnSpan}>{content}</FooterCell>
       </tr>
     </StyledTableFooter>
   );

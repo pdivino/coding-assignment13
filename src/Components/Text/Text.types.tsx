@@ -2,8 +2,7 @@
 import type { HTMLAttributes } from 'react';
 
 // Defines the properties that our Text component can receive.
-export interface TextProps
-  extends HTMLAttributes<HTMLParagraphElement> {
+export interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
   // The written content displayed by the component.
   content?: string;
 

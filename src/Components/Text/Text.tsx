@@ -16,12 +16,10 @@ const StyledText = styled.p<{
   background-color: ${({ $disabled, $backgroundColor }) =>
     $disabled ? '#d1d5db' : $backgroundColor};
 
-  color: ${({ $disabled }) =>
-    $disabled ? '#6b7280' : '#111827'};
+  color: ${({ $disabled }) => ($disabled ? '#6b7280' : '#111827')};
 
   // Shows that the text is unavailable when disabled.
-  cursor: ${({ $disabled }) =>
-    $disabled ? 'not-allowed' : 'text'};
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'text')};
 
   font-size: 1rem;
   line-height: 1.5;

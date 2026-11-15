@@ -34,8 +34,7 @@ export const Default = {
   args: {
     title: 'Welcome to UI Garden',
     subtitle: 'Reusable components built with React and Storybook.',
-    imageUrl:
-     '/ui-garden.svg',
+    imageUrl: '/ui-garden.svg',
     backgroundColor: '#2563eb',
     disabled: false,
   },
@@ -46,8 +45,7 @@ export const Disabled = {
   args: {
     title: 'Hero unavailable',
     subtitle: 'This content is currently disabled.',
-    imageUrl:
-      '/ui-garden.svg',
+    imageUrl: '/ui-garden.svg',
     backgroundColor: '#2563eb',
     disabled: true,
   },

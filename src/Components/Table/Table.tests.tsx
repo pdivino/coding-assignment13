@@ -18,9 +18,6 @@ describe('Table component', () => {
 
     const table = screen.getByTestId('table');
 
-    expect(table).toHaveStyleRule(
-      'background-color',
-      '#d1d5db'
-    );
+    expect(table).toHaveStyleRule('background-color', '#d1d5db');
   });
 });

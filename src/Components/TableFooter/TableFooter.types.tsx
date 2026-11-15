@@ -2,8 +2,7 @@
 import type { HTMLAttributes } from 'react';
 
 // Defines the properties that our TableFooter can receive.
-export interface TableFooterProps
-  extends HTMLAttributes<HTMLTableSectionElement> {
+export interface TableFooterProps extends HTMLAttributes<HTMLTableSectionElement> {
   // Text displayed in the footer.
   content?: string;
 

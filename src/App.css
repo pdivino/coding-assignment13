@@ -10,10 +10,7 @@
   padding: 24px;
   background-color: #f3f4f6;
   color: #111827;
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Adds spacing around each major group of components. */
@@ -36,8 +33,7 @@
 
   /* Creates as many columns as will fit on the screen.
      Each column is at least 260px wide. */
-  grid-template-columns:
-    repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 
   gap: 20px;
   align-items: start;
@@ -93,4 +89,3 @@
     padding: 16px;
   }
 }
-

@@ -2,8 +2,7 @@
 import type { HTMLAttributes } from 'react';
 
 // Defines the properties that our Card component can receive.
-export interface CardProps
-  extends HTMLAttributes<HTMLDivElement> {
+export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   // Main heading displayed in the Card.
   title?: string;
 

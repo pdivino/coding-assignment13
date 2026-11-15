@@ -18,12 +18,10 @@ const RadioContainer = styled.label<{
   background-color: ${({ $disabled, $backgroundColor }) =>
     $disabled ? '#d1d5db' : $backgroundColor};
 
-  color: ${({ $disabled }) =>
-    $disabled ? '#6b7280' : '#111827'};
+  color: ${({ $disabled }) => ($disabled ? '#6b7280' : '#111827')};
 
   // Shows whether the radio button can be selected.
-  cursor: ${({ $disabled }) =>
-    $disabled ? 'not-allowed' : 'pointer'};
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'pointer')};
 
   overflow-wrap: anywhere;
 
@@ -55,11 +53,7 @@ export function RadioButton({
       $disabled={disabled}
       data-testid="radio-container"
     >
-      <StyledRadio
-        type="radio"
-        disabled={disabled}
-        {...rest}
-      />
+      <StyledRadio type="radio" disabled={disabled} {...rest} />
 
       <span>{label}</span>
     </RadioContainer>

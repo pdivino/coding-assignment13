@@ -33,10 +33,8 @@ export default cardStory;
 export const Default = {
   args: {
     title: 'Component Library',
-    description:
-      'A collection of reusable React components.',
-    imageUrl:
-      '/ui-garden.svg',
+    description: 'A collection of reusable React components.',
+    imageUrl: '/ui-garden.svg',
     backgroundColor: '#ffffff',
     disabled: false,
   },
@@ -46,10 +44,8 @@ export const Default = {
 export const Disabled = {
   args: {
     title: 'Card unavailable',
-    description:
-      'This Card is currently disabled.',
-    imageUrl:
-      '/ui-garden.svg',
+    description: 'This Card is currently disabled.',
+    imageUrl: '/ui-garden.svg',
     backgroundColor: '#ffffff',
     disabled: true,
   },

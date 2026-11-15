@@ -2,8 +2,7 @@
 import type { HTMLAttributes } from 'react';
 
 // Defines the properties that our TableRow can receive.
-export interface TableRowProps
-  extends HTMLAttributes<HTMLTableRowElement> {
+export interface TableRowProps extends HTMLAttributes<HTMLTableRowElement> {
   // Values displayed across the row.
   cells?: string[];
 

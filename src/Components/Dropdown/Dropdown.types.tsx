@@ -11,8 +11,7 @@ export interface DropdownOption {
 }
 
 // Defines the properties that our Dropdown component can receive.
-export interface DropdownProps
-  extends SelectHTMLAttributes<HTMLSelectElement> {
+export interface DropdownProps extends SelectHTMLAttributes<HTMLSelectElement> {
   // The list of choices displayed in the Dropdown.
   options?: DropdownOption[];
 

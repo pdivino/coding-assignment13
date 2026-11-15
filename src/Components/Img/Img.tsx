@@ -17,12 +17,10 @@ const ImageContainer = styled.div<{
     $disabled ? '#d1d5db' : $backgroundColor};
 
   // Makes the unavailable image appear faded.
-  opacity: ${({ $disabled }) =>
-    $disabled ? 0.6 : 1};
+  opacity: ${({ $disabled }) => ($disabled ? 0.6 : 1)};
 
   // Shows whether the image is available.
-  cursor: ${({ $disabled }) =>
-    $disabled ? 'not-allowed' : 'default'};
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'default')};
 `;
 
 // Makes the actual image responsive.
@@ -49,11 +47,7 @@ export function Img({
       aria-disabled={disabled}
       data-testid="image-container"
     >
-      <StyledImage
-        src={src}
-        alt={alt}
-        {...rest}
-      />
+      <StyledImage src={src} alt={alt} {...rest} />
     </ImageContainer>
   );
 }

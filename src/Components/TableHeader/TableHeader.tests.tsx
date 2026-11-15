@@ -8,7 +8,7 @@ describe('TableHeader component', () => {
     render(
       <table>
         <TableHeader headings={['Visible heading']} />
-      </table>
+      </table>,
     );
 
     const heading = screen.getByRole('columnheader', {
@@ -23,14 +23,11 @@ describe('TableHeader component', () => {
     render(
       <table>
         <TableHeader disabled />
-      </table>
+      </table>,
     );
 
     const header = screen.getByTestId('table-header');
 
-    expect(header).toHaveStyleRule(
-      'background-color',
-      '#d1d5db'
-    );
+    expect(header).toHaveStyleRule('background-color', '#d1d5db');
   });
 });

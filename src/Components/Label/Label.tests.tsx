@@ -14,18 +14,10 @@ describe('Label component', () => {
 
   // Required test 2: confirms that the disabled background is grey.
   test('changes background colour when disabled', () => {
-    render(
-      <Label
-        text="Disabled label"
-        disabled
-      />
-    );
+    render(<Label text="Disabled label" disabled />);
 
     const label = screen.getByText('Disabled label');
 
-    expect(label).toHaveStyleRule(
-      'background-color',
-      '#d1d5db'
-    );
+    expect(label).toHaveStyleRule('background-color', '#d1d5db');
   });
 });

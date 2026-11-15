@@ -16,12 +16,10 @@ const StyledDropdown = styled.select<{
   background-color: ${({ disabled, $backgroundColor }) =>
     disabled ? '#d1d5db' : $backgroundColor};
 
-  color: ${({ disabled }) =>
-    disabled ? '#6b7280' : '#111827'};
+  color: ${({ disabled }) => (disabled ? '#6b7280' : '#111827')};
 
   // Shows whether the Dropdown can be used.
-  cursor: ${({ disabled }) =>
-    disabled ? 'not-allowed' : 'pointer'};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
   font-size: 1rem;
 
@@ -54,10 +52,7 @@ export function Dropdown({
       {...rest}
     >
       {options.map((option) => (
-        <option
-          key={option.value}
-          value={option.value}
-        >
+        <option key={option.value} value={option.value}>
           {option.label}
         </option>
       ))}

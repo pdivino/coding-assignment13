@@ -22,9 +22,6 @@ describe('Button component', () => {
       name: 'Disabled button',
     });
 
-    expect(button).toHaveStyleRule(
-      'background-color',
-      '#d1d5db'
-    );
+    expect(button).toHaveStyleRule('background-color', '#d1d5db');
   });
 });

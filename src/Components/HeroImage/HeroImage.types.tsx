@@ -2,8 +2,7 @@
 import type { HTMLAttributes } from 'react';
 
 // Defines the properties that our HeroImage component can receive.
-export interface HeroImageProps
-  extends HTMLAttributes<HTMLElement> {
+export interface HeroImageProps extends HTMLAttributes<HTMLElement> {
   // Main heading displayed over the image.
   title?: string;
 

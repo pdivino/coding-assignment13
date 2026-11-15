@@ -18,9 +18,6 @@ describe('Dropdown component', () => {
 
     const dropdown = screen.getByRole('combobox');
 
-    expect(dropdown).toHaveStyleRule(
-      'background-color',
-      '#d1d5db'
-    );
+    expect(dropdown).toHaveStyleRule('background-color', '#d1d5db');
   });
 });

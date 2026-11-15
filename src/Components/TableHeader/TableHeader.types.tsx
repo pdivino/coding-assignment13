@@ -2,8 +2,7 @@
 import type { HTMLAttributes } from 'react';
 
 // Defines the properties that our TableHeader can receive.
-export interface TableHeaderProps
-  extends HTMLAttributes<HTMLTableSectionElement> {
+export interface TableHeaderProps extends HTMLAttributes<HTMLTableSectionElement> {
   // Headings displayed across the top of the table.
   headings?: string[];
 

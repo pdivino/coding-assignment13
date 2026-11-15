@@ -2,8 +2,7 @@
 import type { LabelHTMLAttributes } from 'react';
 
 // Defines the properties that our Label component can receive.
-export interface LabelProps
-  extends LabelHTMLAttributes<HTMLLabelElement> {
+export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
   // Text displayed by the label.
   text?: string;
 
