@@ -1,205 +1,71 @@
-# Coding Assignment 12: UI Garden
+# Paolo's UI Garden – Assignment 13
 
-A responsive React and TypeScript component library created with Storybook and Styled Components.
+This is my UI component library from Assignment 12. For this assignment, I added code quality checks so that bad code can't be committed or pushed without being caught.
 
-## Components
+GitHub repo: https://github.com/pdivino/coding-assignment13
 
-- Button
-- Label
-- Text
-- Table
-- TableHeader
-- TableRow
-- TableCell
-- TableFooter
-- Dropdown
-- RadioButton
-- Img
-- HeroImage
-- Card
+## What you need
 
-Each component folder contains:
+- Node.js
+- Git
+- Docker Desktop (it needs to be running)
 
-```text
-ComponentName.tsx
-ComponentName.stories.tsx
-ComponentName.types.tsx
-ComponentName.tests.tsx
-Index.ts
+## How to run it on localhost:8018
+
+1. Clone the repo and go into the folder:
+
+```bash
+git clone https://github.com/pdivino/coding-assignment13.git
+cd coding-assignment13
 ```
 
-Each component includes Storybook Controls, Default and Disabled stories, responsive styling, and two required tests.
+2. Build the Docker image:
 
-## Project Setup
-
-Requirements:
-
-- Node.js 24
-- npm
-- Docker Desktop
-
-Install the dependencies:
-
-```powershell
-npm.cmd install
+```bash
+docker build -t divino_paolo_coding_assignment13 .
 ```
 
-## Run the React App
+3. Start the container:
 
-```powershell
-npm.cmd start
+```bash
+docker run -d -p 8018:8018 --name divino_paolo_coding_assignment13 divino_paolo_coding_assignment13
 ```
 
-Open:
+4. Open http://localhost:8018 in your browser.
 
-```text
-http://localhost:3000
+## Docker setup
+
+- The container is named `divino_paolo_coding_assignment13`.
+- The site files are stored in `/divino_paolo_ui_garden_build_checks` inside the container.
+- The first stage uses Node.js to create the production build.
+- The second stage uses Nginx to host the site on port 8018.
+
+## Code quality checks
+
+I added three checks to the project:
+
+- **Prettier** checks that the code is formatted the same way everywhere.
+- **ESLint** checks the code for errors and warnings.
+- **Tests** runs all of my component tests.
+
+You can run them yourself with:
+
+```bash
+npm run format:check
+npm run lint
+npm run test:ci
 ```
 
-## Run Storybook
+## Husky (checks before every commit)
 
-```powershell
-npm.cmd run storybook
-```
+Husky runs all three checks every time I try to commit. If any check fails, the commit is stopped.
 
-Open:
+To test it, I changed a line in `src/index.tsx` to break the formatting and tried to commit. Husky stopped the commit with the message `husky - pre-commit script failed`.
 
-```text
-http://localhost:6006
-```
+## GitHub Actions (checks after every push)
 
-Storybook Controls can modify component properties such as text, background colour, content, and disabled state.
+Husky can be skipped with `git commit --no-verify`, so GitHub Actions runs the same checks again every time code is pushed. If a check fails, the build is marked as failed and GitHub sends me an email.
 
-## Run the Tests
+To test it, I made a branch called `test-bypass`, committed badly formatted code with `--no-verify`, and pushed it. The GitHub Actions run failed at the Prettier check.
 
-```powershell
-npm.cmd test -- --watchAll=false
-```
-
-Expected result:
-
-```text
-Test Suites: 2 passed
-Tests:       27 passed
-```
-
-Every component has:
-
-1. A test confirming it is visible.
-2. A test confirming its disabled background is grey.
-
-## Create Production Builds
-
-Create the optimized React build:
-
-```powershell
-npm.cmd run build
-```
-
-Create the static Storybook build:
-
-```powershell
-npm.cmd run build-storybook
-```
-
-The output folders are:
-
-```text
-build
-storybook-static
-```
-
-## Build the Docker Image
-
-Make sure Docker Desktop is running, then run:
-
-```powershell
-docker build -t divino_paolo_assignment12 .
-```
-
-The Dockerfile uses Node.js to create the optimized React build and Nginx to host the completed site.
-
-## Run the Docker Container
-
-```powershell
-docker run -d --name divino_paolo_coding_assignment12 -p 127.0.0.1:8083:8083 divino_paolo_assignment12
-```
-
-Open:
-
-```text
-http://localhost:8083
-```
-
-## Verify the Container
-
-Confirm that the container is running:
-
-```powershell
-docker ps --filter name=divino_paolo_coding_assignment12
-```
-
-Confirm the required working directory:
-
-```powershell
-docker exec divino_paolo_coding_assignment12 pwd
-```
-
-Expected result:
-
-```text
-/divino_paolo_ui_garden
-```
-
-View the container logs:
-
-```powershell
-docker logs divino_paolo_coding_assignment12
-```
-
-## Restart or Stop the Container
-
-Start an existing stopped container:
-
-```powershell
-docker start divino_paolo_coding_assignment12
-```
-
-Stop the container:
-
-```powershell
-docker stop divino_paolo_coding_assignment12
-```
-
-If the container must be recreated:
-
-```powershell
-docker stop divino_paolo_coding_assignment12
-docker rm divino_paolo_coding_assignment12
-docker run -d --name divino_paolo_coding_assignment12 -p 127.0.0.1:8083:8083 divino_paolo_assignment12
-```
-
-## Assignment Verification
-
-- Create React App and TypeScript used
-- Storybook installed
-- Styled Components used
-- All required components included
-- All components are responsive
-- Storybook Controls included
-- Default and Disabled states included
-- Disabled components are grey with a `not-allowed` cursor
-- Two tests included for every component
-- All 27 tests pass
-- React and Storybook production builds succeed
-- Docker working directory is `/divino_paolo_ui_garden`
-- Docker container is `divino_paolo_coding_assignment12`
-- Production site runs on `localhost:8083`
-
-## References
-
-- [Storybook Documentation](https://storybook.js.org/docs)
-- [Styled Components Documentation](https://styled-components.com/docs/basics)
-- [React Testing Library](https://github.com/testing-library/jest-dom)
-- [jest-styled-components](https://www.npmjs.com/package/jest-styled-components)
-- [Docker Documentation](https://docs.docker.com/)
+You can see all the runs here: https://github.com/pdivino/coding-assignment13/actions
