@@ -28,7 +28,8 @@
     "build-storybook": "storybook build",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --max-warnings=0",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,json}\"",
-    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,json}\""
+    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,json}\"",
+    "prepare": "husky"
   },
   "eslintConfig": {
     "extends": [
@@ -58,6 +59,7 @@
     "@storybook/react-webpack5": "^10.6.3",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-storybook": "^10.6.3",
+    "husky": "^9.1.7",
     "jest-styled-components": "^7.4.0",
     "prettier": "^3.10.1",
     "prop-types": "latest",
